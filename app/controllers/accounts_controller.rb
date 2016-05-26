@@ -1,0 +1,2 @@
+class AccountsController < ResourceController
+end

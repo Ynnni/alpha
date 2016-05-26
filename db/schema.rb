@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20160526202827) do
     t.string   "last_sign_in_ip"
     t.string   "name"
     t.string   "email"
-    t.json     "tokens"
+    t.jsonb    "tokens"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["email"], name: "index_users_on_email", using: :btree

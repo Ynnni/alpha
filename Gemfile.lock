@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/cerebris/jsonapi-resources.git
+  revision: 23195aab744dc080b499ea2c0d01a89feac9194b
+  specs:
+    jsonapi-resources (0.7.0)
+      concurrent-ruby
+      rails (>= 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -141,6 +149,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   devise_token_auth
+  jsonapi-resources!
   listen (~> 3.0.5)
   pg (~> 0.18)
   puma (~> 3.0)
@@ -151,4 +160,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   1.11.2
+   1.12.5

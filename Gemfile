@@ -23,6 +23,9 @@ gem 'rack-cors'
 # Simple, secure token based authentication for Rails.
 gem 'devise_token_auth'
 
+# vFramework for developing a server that complies with the JSON API specification.
+gem 'jsonapi-resources', github: 'cerebris/jsonapi-resources'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

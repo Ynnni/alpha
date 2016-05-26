@@ -1,0 +1,2 @@
+class CurrenciesController < ResourceController
+end
