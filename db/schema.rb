@@ -11,10 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160526074707) do
+ActiveRecord::Schema.define(version: 20160526202827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "account_balances", force: :cascade do |t|
+    t.decimal  "balance",     precision: 8, scale: 2
+    t.integer  "account_id"
+    t.integer  "currency_id"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["account_id"], name: "index_account_balances_on_account_id", using: :btree
+    t.index ["currency_id"], name: "index_account_balances_on_currency_id", using: :btree
+  end
+
+  create_table "accounts", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "currencies", force: :cascade do |t|
+    t.string   "name"
+    t.string   "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "provider",               default: "email", null: false
@@ -38,4 +61,6 @@ ActiveRecord::Schema.define(version: 20160526074707) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
   end
 
+  add_foreign_key "account_balances", "accounts"
+  add_foreign_key "account_balances", "currencies"
 end
