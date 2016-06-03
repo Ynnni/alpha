@@ -4,7 +4,7 @@ class AccountBalance < ApplicationRecord
 
   validates :balance, presence: true
 
-  before_create :assign_balance
+  before_validation :assign_balance
 
   def assign_balance
     self.balance = 0
