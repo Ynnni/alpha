@@ -2,7 +2,7 @@ app:
   build: .
   command: ./bin/up
   volumes:
-    - .:/alpha
+    - .:/app
   volumes_from:
     - bundle
   ports:
