@@ -1,0 +1,19 @@
+app:
+  build: .
+  command: ./bin/up
+  volumes:
+    - .:/alpha
+  volumes_from:
+    - bundle
+  ports:
+    - "3000:3000"
+  links:
+    - db
+
+db:
+  image: postgres
+
+bundle:
+  image: busybox
+  volumes:
+    - /bundle

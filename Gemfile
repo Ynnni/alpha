@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 5.0.0.rc1', '< 5.1'
 # Use postgresql as the database for Active Record
@@ -23,8 +22,11 @@ gem 'rack-cors'
 # Simple, secure token based authentication for Rails.
 gem 'devise_token_auth'
 
-# vFramework for developing a server that complies with the JSON API specification.
+# Framework for developing a server that complies with the JSON API specification.
 gem 'jsonapi-resources', github: 'cerebris/jsonapi-resources'
+
+# Manage Procfile-based applications
+gem 'foreman'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
